@@ -55,6 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CakeListItem.cs" />
+    <Compile Include="CartById.cs" />
+    <Compile Include="CartCreate.cs" />
+    <Compile Include="CartDelete.cs" />
+    <Compile Include="CartEdit.cs" />
+    <Compile Include="CartList.cs" />
+    <Compile Include="CustomerById.cs" />
+    <Compile Include="CustomerCreate.cs" />
+    <Compile Include="CustomerDelete.cs" />
+    <Compile Include="CustomerEdit.cs" />
+    <Compile Include="CustomerList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
