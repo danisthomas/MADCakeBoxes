@@ -71,5 +71,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MADCakeBoxes.Data\MADCakeBoxes.Data.csproj">
+      <Project>{4fc00e4c-bd87-4e9a-ab7f-41b2b66b87c0}</Project>
+      <Name>MADCakeBoxes.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
