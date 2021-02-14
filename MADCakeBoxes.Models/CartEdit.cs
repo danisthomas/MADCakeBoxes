@@ -15,6 +15,8 @@ namespace MADCakeBoxes.Models
         private GiftBox _GiftBox = new GiftBox();
 
         public int CartId { get; set; }
+
+        [MaxLength(10, ErrorMessage = "You have reach the maximum amount of items")]
         public int? ItemCount { get; set; }
         public double TotalCost
         {

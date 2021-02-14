@@ -34,11 +34,39 @@ namespace MADCakeBoxes.Models
         //Cake ingredients
         public string Flavor { get; set; }
         public string Toppings { get; set; }
+        public double CakeCost { get { return 30.00; } }
 
         //GiftBox
         //public string Occasion { get; set; }
         //public bool? Roses { get; set; }
         //public bool? Pictures { get; set; }
+        public double GiftBoxCost
+        {
+
+            get
+            {
+                double BasicBoxCost = 40.00;
+
+
+                List<int> Inserts = new List<int>();
+                int TotalInserts = Inserts.Count;
+
+                if (Roses == true)
+                {
+                    Inserts.Add(1);
+                }
+                if (Pictures == true)
+                {
+                    Inserts.Add(1);
+                }
+                if (Butterflies == true)
+                {
+                    Inserts.Add(1);
+                }
+                return BasicBoxCost + (TotalInserts * 5.00);
+
+            }
+        }
 
         public bool? Butterflies { get; set; }
         public int CustomerId { get; set; }

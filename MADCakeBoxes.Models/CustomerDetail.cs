@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MADCakeBoxes.Models
 {
-    public class CustomerDelete
+    public class CustomerDetail
     {
         [Key]
         public int CustomerId { get; set; }
