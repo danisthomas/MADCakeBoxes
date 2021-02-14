@@ -13,10 +13,13 @@ namespace MADCakeBoxes.Models
     {
         private Cake _Cake = new Cake();
         private GiftBox _GiftBox = new GiftBox();
-
-        [Key]
+        
+        public string FullName { get; set; }
         public int CartId { get; set; }
+
+        [Display(Name = "Number of Items in Cart")]
         public int? ItemCount { get; set; }
+        [Display(Name = "Total Cost")]
         public double TotalCost
         {
             get
@@ -25,20 +28,20 @@ namespace MADCakeBoxes.Models
 
             }
         }
+        [Display(Name = "Purchase Date")]
         public DateTime PurchaseDate { get; set; }
 
-        [ForeignKey(nameof(Customer))]
-        [Required]
+        //Cake ingredients
+        public string Flavor { get; set; }
+        public string Toppings { get; set; }
+
+        //GiftBox
+        //public string Occasion { get; set; }
+        //public bool? Roses { get; set; }
+        //public bool? Pictures { get; set; }
+
+        public bool? Butterflies { get; set; }
         public int CustomerId { get; set; }
-
-        public virtual Customer Customer { get; set; }
-
-        [ForeignKey(nameof(GiftBox))]
-        [Required]
         public int? GiftBoxId { get; set; }
-        public virtual GiftBox GiftBox { get; set; }
-
-        [Required]
-        public Guid CartUser { get; set; }
     }
 }
