@@ -22,9 +22,10 @@ namespace MADCakeBoxes.Services
             var entity =
                 new Cake()
                 {
-                   // CakeId = _cakeId,
+                    UserId = _cakeId,
                     Flavor = model.Flavor,
                     Toppings = model.Toppings,
+                    Icing = model.Icing,
                     
                 };
             using (var ctx = new ApplicationDbContext())

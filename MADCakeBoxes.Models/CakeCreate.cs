@@ -13,6 +13,8 @@ namespace MADCakeBoxes.Models
         public string Flavor { get; set; }
         [Required]
         public string Toppings { get; set; }
+        [Required]
+        public string Icing { get; set; }
         
     }
 }
