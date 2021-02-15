@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CakeCreate.cs" />
     <Compile Include="CakeListItem.cs" />
     <Compile Include="CartById.cs" />
     <Compile Include="CartCreate.cs" />
