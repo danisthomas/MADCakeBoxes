@@ -11,7 +11,6 @@ namespace MADCakeBoxes.Data
     {
         [Key]
         public int CakeId { get; set; }
-        public Guid UserId { get; set; }
         [Required]
         public string Flavor { get; set; }
         [Required]
