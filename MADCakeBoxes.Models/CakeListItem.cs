@@ -13,6 +13,7 @@ namespace MADCakeBoxes.Models
 
         public string  Toppings { get; set; }
         public string  Flavor { get; set; }
+        public string Icing { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }
