@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CakeCreate.cs" />
+    <Compile Include="CakeDetail.cs" />
+    <Compile Include="CakeEdit.cs" />
     <Compile Include="CakeListItem.cs" />
     <Compile Include="CartCreate.cs" />
     <Compile Include="CartDetail.cs" />
@@ -63,6 +66,10 @@
     <Compile Include="CustomerDetail.cs" />
     <Compile Include="CustomerEdit.cs" />
     <Compile Include="CustomerList.cs" />
+    <Compile Include="GiftBoxCreate.cs" />
+    <Compile Include="GiftBoxDetail.cs" />
+    <Compile Include="GiftBoxEdit.cs" />
+    <Compile Include="GiftBoxListItems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,13 +10,10 @@ namespace MADCakeBoxes.Models
 {
     public class CustomerList
     {
-        [Key]
         public int CustomerId { get; set; }
 
-        [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string LastName { get; set; }
         public string FullName
         {
@@ -26,13 +23,8 @@ namespace MADCakeBoxes.Models
             }
         }
 
-        [Required]
         public string Address { get; set; }
 
-        [Required]
         public string Phone { get; set; }
-
-        [Required]
-        public Guid User { get; set; }
     }
 }

@@ -54,12 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CakeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MADCakeBoxes.Data\MADCakeBoxes.Data.csproj">
+      <Project>{4fc00e4c-bd87-4e9a-ab7f-41b2b66b87c0}</Project>
+      <Name>MADCakeBoxes.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MADCakeBoxes.Models\MADCakeBoxes.Models.csproj">
+      <Project>{b81ab643-0543-4341-8cb8-d5a64fe7892d}</Project>
+      <Name>MADCakeBoxes.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
