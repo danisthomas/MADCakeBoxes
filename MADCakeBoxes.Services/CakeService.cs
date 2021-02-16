@@ -55,5 +55,22 @@ namespace MADCakeBoxes.Services
 
             }
         }
+        public bool UpdateCake(CakeEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                   ctx
+                   .Cakes
+                   .Single(e => e.CakeId == model.CakeId && e.UserId == _cakeId);
+
+                entity.Flavor = model.Flavor;
+                entity.Icing = model.Icing;
+                entity.Toppings = model.Toppings;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

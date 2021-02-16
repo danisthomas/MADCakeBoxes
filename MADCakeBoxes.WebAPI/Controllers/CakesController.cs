@@ -1,4 +1,5 @@
-﻿using MADCakeBoxes.Models;
+﻿using MADCakeBoxes.Data;
+using MADCakeBoxes.Models;
 using MADCakeBoxes.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -13,7 +14,7 @@ namespace MADCakeBoxes.WebAPI.Controllers
     [Authorize]
     public class CakesController : ApiController
     {
-       
+
         public IHttpActionResult Get()
         {
             CakeService cakeService = CreateCakeService();
@@ -31,12 +32,23 @@ namespace MADCakeBoxes.WebAPI.Controllers
 
             return Ok();
         }
-            private CakeService CreateCakeService()
+        private CakeService CreateCakeService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var cakeService = new CakeService(userId);
             return cakeService;
         }
 
-    }   
+       
+        public IHttpActionResult Put(CakeEdit cake)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var service = CreateCakeService();
+            if (!service.UpdateCake(cake))
+                return InternalServerError();
+            return Ok();
+
+        }
+    }
 }
