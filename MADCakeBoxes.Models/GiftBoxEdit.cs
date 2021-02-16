@@ -14,15 +14,16 @@ namespace MADCakeBoxes.Models
 
         public string Occasion { get; set; }
 
-        public bool Roses { get; set; }
+        public bool? Roses { get; set; }
 
-        public bool Pictures { get; set; }
+        public bool? Pictures { get; set; }
 
-        public bool Butterflies { get; set; }
+        public bool? Butterflies { get; set; }
 
         public int NumInInventory { get; set; }
-        [ForeignKey(nameof(Cake))]
+
+        //[ForeignKey(nameof(Cake))]
         public int CakeId { get; set; }
-        public virtual Cake Cake { get; set; }
+        //public virtual Cake Cake { get; set; }
     }
 }

@@ -16,7 +16,8 @@ namespace MADCakeBoxes.Models
 
         public int CartId { get; set; }
 
-        [MaxLength(10, ErrorMessage = "You have reach the maximum amount of items")]
+        [MaxLength(10, ErrorMessage = 
+            "You have reach the maximum amount of items")]
         public int? ItemCount { get; set; }
         public double TotalCost
         {
@@ -26,7 +27,7 @@ namespace MADCakeBoxes.Models
 
             }
         }
-        public DateTime PurchaseDate { get; set; }
+        //public DateTime PurchaseDate { get; set; }
         public int CustomerId { get; set; }
         public int? GiftBoxId { get; set; }
     }

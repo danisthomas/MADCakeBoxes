@@ -12,9 +12,12 @@ namespace MADCakeBoxes.Models
     {
         public int GiftBoxId { get; set; }
 
-        [ForeignKey(nameof(Cake))]
+        //[ForeignKey(nameof(Cake))]
         public int CakeId { get; set; }
-        public virtual Cake Cake { get; set; }
+        public string Toppings { get; set; }
+        public string Flavor { get; set; }
+        public string Icing { get; set; }
+        //public virtual Cake Cake { get; set; }
 
         public bool Roses { get; set; }
         public bool Pictures { get; set; }

@@ -15,7 +15,8 @@ namespace MADCakeBoxes.Models
         private GiftBox _GiftBox = new GiftBox();
 
         public int CustomerId { get; set; }
-        public int? ItemCount { get; set; }
+        public int GiftBoxId { get; set; }
+        public int ItemCount { get; set; }
         public double TotalCost
         {
             get

@@ -59,9 +59,9 @@
     <Compile Include="CakeEdit.cs" />
     <Compile Include="CakeListItem.cs" />
     <Compile Include="CartCreate.cs" />
-    <Compile Include="CartDetail.cs" />
-    <Compile Include="CartEdit.cs" />
     <Compile Include="CartList.cs" />
+    <Compile Include="CartEdit.cs" />
+    <Compile Include="CartDetail.cs" />
     <Compile Include="CustomerCreate.cs" />
     <Compile Include="CustomerDetail.cs" />
     <Compile Include="CustomerEdit.cs" />

@@ -10,7 +10,6 @@ namespace MADCakeBoxes.Models
 {
     public class CustomerDetail
     {
-        [Key]
         public int CustomerId { get; set; }
 
         public string FirstName { get; set; }
