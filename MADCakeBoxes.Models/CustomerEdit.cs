@@ -18,13 +18,6 @@ namespace MADCakeBoxes.Models
 
         [Required]
         public string LastName { get; set; }
-        public string FullName
-        {
-            get
-            {
-                return ($"{FirstName} {LastName}");
-            }
-        }
 
         [Required]
         public string Address { get; set; }
@@ -32,7 +25,5 @@ namespace MADCakeBoxes.Models
         [Required]
         public string Phone { get; set; }
 
-        [Required]
-        public Guid User { get; set; }
     }
 }

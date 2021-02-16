@@ -34,5 +34,6 @@ namespace MADCakeBoxes.Models
 
         [Required]
         public Guid User { get; set; }
+
     }
 }

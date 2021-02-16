@@ -9,12 +9,11 @@ using MADCakeBoxes.Data;
 
 namespace MADCakeBoxes.Models
 {
-    public class CartById
+    public class CartDetail
     {
         private Cake _Cake = new Cake();
         private GiftBox _GiftBox = new GiftBox();
 
-        [Key]
         public int CartId { get; set; }
         public int? ItemCount { get; set; }
         public double TotalCost
@@ -26,19 +25,7 @@ namespace MADCakeBoxes.Models
             }
         }
         public DateTime PurchaseDate { get; set; }
-
-        [ForeignKey(nameof(Customer))]
-        [Required]
         public int CustomerId { get; set; }
-
-        public virtual Customer Customer { get; set; }
-
-        [ForeignKey(nameof(GiftBox))]
-        [Required]
         public int? GiftBoxId { get; set; }
-        public virtual GiftBox GiftBox { get; set; }
-
-        [Required]
-        public Guid CartUser { get; set; }
     }
 }

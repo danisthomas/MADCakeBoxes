@@ -8,15 +8,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MADCakeBoxes.Models
 {
-    public class CustomerDelete
+    public class CustomerDetail
     {
         [Key]
         public int CustomerId { get; set; }
 
-        [Required]
         public string FirstName { get; set; }
-
-        [Required]
         public string LastName { get; set; }
         public string FullName
         {
@@ -25,14 +22,8 @@ namespace MADCakeBoxes.Models
                 return ($"{FirstName} {LastName}");
             }
         }
-
-        [Required]
         public string Address { get; set; }
-
-        [Required]
         public string Phone { get; set; }
 
-        [Required]
-        public Guid User { get; set; }
     }
 }
