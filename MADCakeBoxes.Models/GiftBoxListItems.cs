@@ -10,16 +10,15 @@ namespace MADCakeBoxes.Models
 {
     public class GiftBoxListItems
     {
+        private GiftBox giftBox = new GiftBox();
         public int GiftBoxId { get; set; }
 
-        [ForeignKey(nameof(Cake))]
+        //[ForeignKey(nameof(Cake))]
         public int CakeId { get; set; }
-        public virtual Cake Cake { get; set; }
+        //public virtual Cake Cake { get; set; }
 
         public string Occasion { get; set; }
-        public bool Roses { get; set; }
-        public bool Pictures { get; set; }
-        public bool Butterflies { get; set; }
+        
 
         public int NumInInventory { get; set; }
 
@@ -34,15 +33,15 @@ namespace MADCakeBoxes.Models
                 List<int> Inserts = new List<int>();
                 int TotalInserts = Inserts.Count;
 
-                if (Roses == true)
+                if (giftBox.Roses == true)
                 {
                     Inserts.Add(1);
                 }
-                if (Pictures == true)
+                if (giftBox.Pictures == true)
                 {
                     Inserts.Add(1);
                 }
-                if (Butterflies == true)
+                if (giftBox.Butterflies == true)
                 {
                     Inserts.Add(1);
                 }
