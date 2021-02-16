@@ -15,6 +15,8 @@ namespace MADCakeBoxes.Models
         public string Toppings { get; set; }
         [Required]
         public string Icing { get; set; }
-        
+        public double? CakeCost { get { return 30.00; } }
+
+
     }
 }

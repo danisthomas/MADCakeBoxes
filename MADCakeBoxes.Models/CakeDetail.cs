@@ -10,6 +10,7 @@ namespace MADCakeBoxes.Models
     class CakeDetail
     {
         public int CakeId { get; set; }
+        public double? CakeCost { get { return 30.00; } }
 
         public string Toppings { get; set; }
         public string Flavor { get; set; }
