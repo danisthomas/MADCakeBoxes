@@ -10,7 +10,6 @@ namespace MADCakeBoxes.Models
 {
     public class CustomerCreate
     {
-        [Key]
         public int CustomerId { get; set; }
 
         [Required]
@@ -31,9 +30,5 @@ namespace MADCakeBoxes.Models
 
         [Required]
         public string Phone { get; set; }
-
-        [Required]
-        public Guid User { get; set; }
-
     }
 }
