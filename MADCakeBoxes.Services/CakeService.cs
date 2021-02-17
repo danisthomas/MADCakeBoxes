@@ -48,7 +48,7 @@ namespace MADCakeBoxes.Services
                         {
                             CakeId = e.CakeId,
                             Flavor = e.Flavor,
-                            Toppings = e.Toppings
+                            //Toppings = e.Toppings
                         }
                      );
                 return query.ToArray();
@@ -67,10 +67,24 @@ namespace MADCakeBoxes.Services
                 entity.Flavor = model.Flavor;
                 entity.Icing = model.Icing;
                 entity.Toppings = model.Toppings;
-                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+               // entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteCake(int cakeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Cakes
+                    .Single(e => e.CakeId == cakeId && e.UserId == _cakeId);
+                ctx.Cakes.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }
