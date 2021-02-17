@@ -13,17 +13,17 @@ namespace MADCakeBoxes.Models
         public int GiftBoxId { get; set; }
 
         //[ForeignKey(nameof(Cake))]
-        public int CakeId { get; set; }
+        public int? CakeId { get; set; }
         public string Toppings { get; set; }
         public string Flavor { get; set; }
         public string Icing { get; set; }
         //public virtual Cake Cake { get; set; }
 
-        public bool Roses { get; set; }
-        public bool Pictures { get; set; }
-        public bool Butterflies { get; set; }
+        public bool? Roses { get; set; }
+        public bool? Pictures { get; set; }
+        public bool? Butterflies { get; set; }
 
-        public int NumInInventory { get; set; }
+        public int? NumInInventory { get; set; }
 
         public double GiftBoxCost
         {
