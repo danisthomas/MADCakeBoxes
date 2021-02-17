@@ -57,6 +57,7 @@
     <Compile Include="CakeService.cs" />
     <Compile Include="CartService.cs" />
     <Compile Include="CustomerService.cs" />
+    <Compile Include="GiftBoxServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
