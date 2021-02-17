@@ -57,7 +57,7 @@ namespace MADCakeBoxes.Data
 
         public virtual Cake Cake { get; set; }
 
-        //[Required]
-        //public Guid GiftBoxUser { get; set; }
+        [Required]
+        public Guid GiftBoxUser { get; set; }
     }
 }
