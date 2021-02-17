@@ -20,10 +20,10 @@ namespace MADCakeBoxes.Models
 
         public bool? Butterflies { get; set; }
 
-        public int NumInInventory { get; set; }
+        public int? NumInInventory { get; set; }
 
         //[ForeignKey(nameof(Cake))]
-        public int CakeId { get; set; }
+        public int? CakeId { get; set; }
         //public virtual Cake Cake { get; set; }
     }
 }
