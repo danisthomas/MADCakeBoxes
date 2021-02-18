@@ -61,8 +61,9 @@ namespace MADCakeBoxes.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Customers.Where(e => e.User == _userId).Select(
-                    e => new CustomerList
+                var query = ctx.Customers
+                    .Where(e => e.User == _userId)
+                    .Select(e => new CustomerList
                     {
                         CustomerId = e.CustomerId,
                         Address = e.Address,
