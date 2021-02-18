@@ -12,7 +12,7 @@ namespace MADCakeBoxes.Data
     {
         private Cake _Cake = new Cake();
         private GiftBox _GiftBox = new GiftBox();
-        
+
         [Key]
         public int CartId { get; set; }
         public int? ItemCount { get; set; }
@@ -41,43 +41,7 @@ namespace MADCakeBoxes.Data
         public Guid CartUser { get; set; }
         //Cake ingredients
         public int CakeId { get; set; }
-        public string Flavor { get; set; }
-        public string Toppings { get; set; }
-        public double CakeCost { get { return 30.00; } }
-
-        public string FullName { get; set; }
-
-        //GiftBox
-        public string Occasion { get; set; }
-        public bool Roses { get; set; }
-        public bool Pictures { get; set; }
-        public bool Butterflies { get; set; }
-        public double GiftBoxCost
-        {
-
-            get
-            {
-                double BasicBoxCost = 40.00;
-
-
-                List<int> Inserts = new List<int>();
-                int TotalInserts = Inserts.Count;
-
-                if (Roses == true)
-                {
-                    Inserts.Add(1);
-                }
-                if (Pictures == true)
-                {
-                    Inserts.Add(1);
-                }
-                if (Butterflies == true)
-                {
-                    Inserts.Add(1);
-                }
-                return BasicBoxCost + (TotalInserts * 5.00);
-
-            }
-        }
+        
+        
     }
 }
