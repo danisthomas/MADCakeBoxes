@@ -65,15 +65,15 @@ namespace MADCakeBoxes.Services
                 return new CartDetail
                 {
                     CustomerId = entity.CustomerId,
-                    FullName = entity.FullName,
-                    ItemCount = (int)entity.ItemCount,
-                    Flavor = entity.Flavor,
-                    Toppings = entity.Toppings,
+                    FullName = entity.Customer.FullName,
+                    ItemCount = entity.ItemCount,
+                    Flavor = entity.GiftBox.Cake.Flavor,
+                    Toppings = entity.GiftBox.Cake.Toppings,
                     GiftBoxId = entity.GiftBoxId,
-                    Occasion = entity.Occasion,
-                    Roses = entity.Roses,
-                    Pictures = entity.Pictures,
-                    Butterflies = entity.Butterflies,
+                    Occasion = entity.GiftBox.Occasion,
+                    Roses = entity.GiftBox.Roses,
+                    Pictures = entity.GiftBox.Pictures,
+                    Butterflies = entity.GiftBox.Butterflies,
                     PurchaseDate = entity.PurchaseDate,
                 };
             }

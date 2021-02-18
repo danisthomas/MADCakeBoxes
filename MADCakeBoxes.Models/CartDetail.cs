@@ -20,7 +20,7 @@ namespace MADCakeBoxes.Models
         public int CartId { get; set; }
 
         [Display(Name = "Number of Items in Cart")]
-        public int ItemCount { get; set; }
+        public int? ItemCount { get; set; }
 
         [Display(Name = "Total Cost")]
         public double TotalCost
@@ -44,9 +44,9 @@ namespace MADCakeBoxes.Models
         //GiftBox
         public int GiftBoxId { get; set; }
         public string Occasion { get; set; }
-        public bool Roses { get; set; }
-        public bool Pictures { get; set; }
-        public bool Butterflies { get; set; }
+        public bool? Roses { get; set; }
+        public bool? Pictures { get; set; }
+        public bool? Butterflies { get; set; }
         public double GiftBoxCost
         {
 
