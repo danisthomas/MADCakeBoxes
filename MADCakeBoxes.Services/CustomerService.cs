@@ -44,6 +44,15 @@ namespace MADCakeBoxes.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteCustomer(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Customers.Single(e => e.CustomerId == id && e.User == _userId);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
         public CustomerDetail GetCustomerById(int id)
         {
             using (var ctx = new ApplicationDbContext())
