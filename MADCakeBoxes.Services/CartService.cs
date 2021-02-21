@@ -40,6 +40,15 @@ namespace MADCakeBoxes.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteCart(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Carts.Single(e => e.CartId == id && e.CartUser == _cartId);
+                ctx.Carts.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
         public IEnumerable<CartList> GetCartList()
         {
             using (var ctx = new ApplicationDbContext())
