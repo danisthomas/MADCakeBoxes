@@ -57,5 +57,11 @@ namespace MADCakeBoxes.WebAPI.Controllers
                 return InternalServerError();
             return Ok();
         }
+        public IHttpActionResult Get(int cakeid)
+        {
+            CakeService cakeService = CreateCakeService();
+            var note = cakeService.GetCakeById(cakeid);
+            return Ok(note);
+        }
     }
 }

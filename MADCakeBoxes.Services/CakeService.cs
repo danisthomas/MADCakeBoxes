@@ -48,11 +48,30 @@ namespace MADCakeBoxes.Services
                         {
                             CakeId = e.CakeId,
                             Flavor = e.Flavor,
-                            //Toppings = e.Toppings
+                            Toppings = e.Toppings
                         }
                      );
                 return query.ToArray();
 
+            }
+            
+        }
+        public CakeDetail GetCakeById(int cakeid)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Cakes
+                        .Single(e => e.CakeId == cakeid && e.UserId == _cakeId);
+                return
+                    new CakeDetail
+                    {
+                        CakeId = entity.CakeId,
+                        Flavor = entity.Flavor,
+                        Toppings = entity.Toppings,
+                        
+                    };
             }
         }
         public bool UpdateCake(CakeEdit model)
@@ -67,7 +86,7 @@ namespace MADCakeBoxes.Services
                 entity.Flavor = model.Flavor;
                 entity.Icing = model.Icing;
                 entity.Toppings = model.Toppings;
-               // entity.ModifiedUtc = DateTimeOffset.UtcNow;
+               
 
                 return ctx.SaveChanges() == 1;
             }
