@@ -67,5 +67,7 @@ namespace MADCakeBoxes.Data
             HasKey(iur => iur.UserId);
         }
     }
-
+    
+        }
+    }
 }
