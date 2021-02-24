@@ -11,14 +11,16 @@ namespace MADCakeBoxes.Models
 {
     public class CustomerDetail
     {
-        private Customer customer = new Customer();
+        //private Customer customer = new Customer();
         public int CustomerId { get; set; }
 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string FullName
         {
             get
             {
-                return ($"{customer.FirstName} {customer.LastName}");
+                return ($"{FirstName} {LastName}");
             }
         }
         public string Address { get; set; }

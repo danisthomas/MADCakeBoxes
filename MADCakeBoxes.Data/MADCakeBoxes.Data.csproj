@@ -97,6 +97,14 @@
     <Compile Include="Migrations\202102232243047_update.Designer.cs">
       <DependentUpon>202102232243047_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102232356032_update cake.cs" />
+    <Compile Include="Migrations\202102232356032_update cake.Designer.cs">
+      <DependentUpon>202102232356032_update cake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102240005348_update customer.cs" />
+    <Compile Include="Migrations\202102240005348_update customer.Designer.cs">
+      <DependentUpon>202102240005348_update customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102232243047_update.resx">
       <DependentUpon>202102232243047_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102232356032_update cake.resx">
+      <DependentUpon>202102232356032_update cake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102240005348_update customer.resx">
+      <DependentUpon>202102240005348_update customer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
