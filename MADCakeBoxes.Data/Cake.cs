@@ -11,10 +11,11 @@ namespace MADCakeBoxes.Data
     {
         [Key]
         public int CakeId { get; set; }
+        [Required]
         public Guid UserId { get; set; }
-        [Required]
+       
         public string Flavor { get; set; }
-        [Required]
+     
         public string Toppings { get; set; }
         public string Icing { get; set; }
         public double CakeCost { get { return 30.00; } }

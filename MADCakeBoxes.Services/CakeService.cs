@@ -10,11 +10,11 @@ namespace MADCakeBoxes.Services
 {
     public class CakeService
     {
-        private readonly Guid _cakeId;
+        private readonly Guid _userId;
 
-        public CakeService(Guid cakeId)
+        public CakeService(Guid userId)
         {
-            _cakeId = cakeId;
+            _userId = userId;
         }
 
         public bool CreateCake(CakeCreate model)
@@ -22,7 +22,7 @@ namespace MADCakeBoxes.Services
             var entity =
                 new Cake()
                 {
-                    UserId = _cakeId,
+                    UserId = _userId,
                     Flavor = model.Flavor,
                     Toppings = model.Toppings,
                     Icing = model.Icing,
@@ -41,7 +41,7 @@ namespace MADCakeBoxes.Services
                 var query =
                     ctx
                     .Cakes
-                    .Where(e => e.UserId == _cakeId)
+                    .Where(e => e.UserId == _userId)
                     .Select(
                         e =>
                         new CakeListItem
@@ -56,14 +56,14 @@ namespace MADCakeBoxes.Services
             }
             
         }
-        public CakeDetail GetCakeById(int cakeid)
+        public CakeDetail GetCakeById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Cakes
-                        .Single(e => e.CakeId == cakeid && e.UserId == _cakeId);
+                        .Single(e => e.CakeId == id && e.UserId == _userId);
                 return
                     new CakeDetail
                     {
@@ -81,7 +81,7 @@ namespace MADCakeBoxes.Services
                 var entity =
                    ctx
                    .Cakes
-                   .Single(e => e.CakeId == model.CakeId && e.UserId == _cakeId);
+                   .Single(e => e.CakeId == model.CakeId && e.UserId == _userId);
 
                 entity.Flavor = model.Flavor;
                 entity.Icing = model.Icing;
@@ -98,7 +98,7 @@ namespace MADCakeBoxes.Services
                 var entity =
                     ctx
                     .Cakes
-                    .Single(e => e.CakeId == cakeId && e.UserId == _cakeId);
+                    .Single(e => e.CakeId == cakeId && e.UserId == _userId);
                 ctx.Cakes.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

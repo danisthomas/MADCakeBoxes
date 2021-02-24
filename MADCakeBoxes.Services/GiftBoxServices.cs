@@ -57,6 +57,7 @@ namespace MADCakeBoxes.Services
                 return new GiftBoxDetail
                 {
                     GiftBoxId = entity.GiftBoxId,
+                    Occasion = entity.Occasion,
                     CakeId = entity.CakeId,
                     Toppings = entity.Cake.Toppings,
                     Flavor = entity.Cake.Flavor,

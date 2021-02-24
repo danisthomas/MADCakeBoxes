@@ -49,7 +49,7 @@ namespace MADCakeBoxes.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Customers.Single(e => e.CustomerId == id && e.User == _userId);
-
+                ctx.Customers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -61,24 +61,28 @@ namespace MADCakeBoxes.Services
                 return new CustomerDetail
                 {
                     CustomerId = entity.CustomerId,
+                    FirstName=entity.FirstName,
+                    LastName=entity.LastName,
                     Phone = entity.Phone,
                     Address = entity.Address,
                 };
             }
         }
-        public IEnumerable<CustomerList> GetCustomers()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query = ctx.Customers
-                    .Where(e => e.User == _userId)
-                    .Select(e => new CustomerList
-                    {
-                        CustomerId = e.CustomerId,
-                        Address = e.Address,
-                    });
-                return query.ToArray();
-            }
-        }
+        //public IEnumerable<CustomerList> GetCustomers()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var query = ctx.Customers
+        //            .Where(e => e.User == _userId)
+        //            .Select(e => new CustomerList
+        //            {
+        //                FirstName = e.FirstName,
+        //                LastName = e.LastName,
+        //                CustomerId = e.CustomerId,
+        //                Address = e.Address,
+        //            });
+        //        return query.ToArray();
+        //    }
+        //}
     }
 }

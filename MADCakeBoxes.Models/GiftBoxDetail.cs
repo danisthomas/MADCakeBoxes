@@ -14,6 +14,7 @@ namespace MADCakeBoxes.Models
 
         //[ForeignKey(nameof(Cake))]
         public int? CakeId { get; set; }
+        public string Occasion { get; set; }
         public string Toppings { get; set; }
         public string Flavor { get; set; }
         public string Icing { get; set; }
