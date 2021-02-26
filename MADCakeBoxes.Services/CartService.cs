@@ -93,5 +93,27 @@ namespace MADCakeBoxes.Services
                 };
             }
         }
+        public CartDetail GetCartByPurchaseDate(DateTime date)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Carts.Single(e => e.PurchaseDate == date && e.CartUser == _cartId);
+                return new CartDetail
+                {
+                    CustomerId = entity.CustomerId,
+                    CartId = entity.CartId,
+                    FullName = entity.Customer.FullName,
+                    ItemCount = entity.ItemCount,
+                    Flavor = entity.GiftBox.Cake.Flavor,
+                    Toppings = entity.GiftBox.Cake.Toppings,
+                    GiftBoxId = entity.GiftBoxId,
+                    Occasion = entity.GiftBox.Occasion,
+                    Roses = entity.GiftBox.Roses,
+                    Pictures = entity.GiftBox.Pictures,
+                    Butterflies = entity.GiftBox.Butterflies,
+                    PurchaseDate = entity.PurchaseDate,
+                };
+            }
+        }
     }
 }

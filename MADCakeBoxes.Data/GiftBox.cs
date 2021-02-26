@@ -30,24 +30,29 @@ namespace MADCakeBoxes.Data
             get
             {
                 double BasicBoxCost = 40.00;
-                
-
-                List<int> Inserts = new List<int>();
-                int TotalInserts = Inserts.Count;
+                double PicCost=0;
+                double RosesCost=0;
+                double ButterfliesCost=0;
+                //List<int> Inserts = new List<int>();
+                //int TotalInserts = Inserts.Count;
 
                 if (Roses == true)
                 {
-                    Inserts.Add(1);
+                    RosesCost = 20.00;
+                   // Inserts.Add(1);
                 }
                 if (Pictures == true)
                 {
-                    Inserts.Add(1);
+                    
+                    PicCost = 5.00;
+                    //Inserts.Add(1);
                 }
                 if(Butterflies == true)
                 {
-                    Inserts.Add(1);
+                    ButterfliesCost = 10.00;
+                   // Inserts.Add(1);
                 }
-                return BasicBoxCost + (TotalInserts * 5.00);
+                return BasicBoxCost + PicCost + RosesCost + ButterfliesCost;// (TotalInserts * 5.00);
 
             }
         }

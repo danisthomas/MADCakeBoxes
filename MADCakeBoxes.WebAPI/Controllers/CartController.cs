@@ -18,6 +18,14 @@ namespace MADCakeBoxes.WebAPI.Controllers
             var cart = cartService.GetCartById(id);
             return Ok(cart);
         }
+
+        [Route("api/cart/purchase")]
+        public IHttpActionResult GetCartByPurchaseDate([FromBody]  DateTime date)
+        {
+            CartService cartService = CreateCartService();
+            var cart = cartService.GetCartByPurchaseDate(date);
+            return Ok(cart);
+        }
         public IHttpActionResult Post(CartCreate cart)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
