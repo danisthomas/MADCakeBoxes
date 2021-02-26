@@ -34,13 +34,13 @@ namespace MADCakeBoxes.Data
 
         [ForeignKey(nameof(GiftBox))]
         [Required]
-        public int GiftBoxId { get; set; }
+        public int? GiftBoxId { get; set; }
         public virtual GiftBox GiftBox { get; set; }
 
         [Required]
         public Guid CartUser { get; set; }
         //Cake ingredients
-        public int CakeId { get; set; }
+       // public int CakeId { get; set; }
         
         
     }

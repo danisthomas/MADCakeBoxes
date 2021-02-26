@@ -27,6 +27,7 @@ namespace MADCakeBoxes.Services
                 Roses = model.Roses,
                 NumInInventory = model.NumInInventory,
                 CakeId = model.CakeId
+
             };
             using (var ctx = new ApplicationDbContext())
             {

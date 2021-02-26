@@ -26,6 +26,6 @@ namespace MADCakeBoxes.Models
         }
         public DateTime PurchaseDate { get; set; }
         public int CustomerId { get; set; }
-        public int GiftBoxId { get; set; }
+        public int? GiftBoxId { get; set; }
     }
 }

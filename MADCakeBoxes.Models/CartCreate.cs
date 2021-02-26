@@ -14,7 +14,9 @@ namespace MADCakeBoxes.Models
         private Cake _Cake = new Cake();
         private GiftBox _GiftBox = new GiftBox();
 
+        [ForeignKey(nameof(customers))]
         public int CustomerId { get; set; }
+        public virtual Customer customers { get; set; }
         public int GiftBoxId { get; set; }
         public int ItemCount { get; set; }
         public double TotalCost
