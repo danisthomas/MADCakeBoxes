@@ -22,6 +22,8 @@ namespace MADCakeBoxes.Services
                 CartUser = _cartId,
                 GiftBoxId = model.GiftBoxId,
                 ItemCount = model.ItemCount,
+                PurchaseDate= DateTime.Now,
+                CustomerId=model.CustomerId,
 
             };
             using (var ctx = new ApplicationDbContext())
@@ -36,6 +38,9 @@ namespace MADCakeBoxes.Services
             {
                 var entity = ctx.Carts.Single(e => e.CartId == model.CartId && e.CartUser == _cartId);
                 entity.ItemCount = model.ItemCount;
+                entity.CartId = model.CartId;
+                entity.CustomerId = model.CustomerId;
+                entity.GiftBoxId = model.GiftBoxId;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -49,23 +54,23 @@ namespace MADCakeBoxes.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<CartList> GetCartList()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query = ctx.Carts
-                    .Where(e => e.CartUser == _cartId)
-                    .Select(e => new CartList
-                {
-                    CartId = e.CartId,
-                    ItemCount = e.ItemCount,
-                    CustomerId = e.CustomerId,
-                    GiftBoxId = e.GiftBoxId,
-                    PurchaseDate = e.PurchaseDate,
-                });
-                return query.ToArray();
-            }
-        }
+        //public IEnumerable<CartList> GetCartList()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var query = ctx.Carts
+        //            .Where(e => e.CartUser == _cartId)
+        //            .Select(e => new CartList
+        //        {
+        //            CartId = e.CartId,
+        //            ItemCount = e.ItemCount,
+        //            CustomerId = e.CustomerId,
+        //            GiftBoxId = e.GiftBoxId,
+        //            PurchaseDate = e.PurchaseDate,
+        //        });
+        //        return query.ToArray();
+        //    }
+        //}
         public CartDetail GetCartById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -74,6 +79,7 @@ namespace MADCakeBoxes.Services
                 return new CartDetail
                 {
                     CustomerId = entity.CustomerId,
+                    CartId=entity.CartId,
                     FullName = entity.Customer.FullName,
                     ItemCount = entity.ItemCount,
                     Flavor = entity.GiftBox.Cake.Flavor,

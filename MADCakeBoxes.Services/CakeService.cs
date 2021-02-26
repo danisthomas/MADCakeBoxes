@@ -27,6 +27,7 @@ namespace MADCakeBoxes.Services
                     Toppings = model.Toppings,
                     Icing = model.Icing,
                     
+                    
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -91,19 +92,22 @@ namespace MADCakeBoxes.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteCake(int cakeId)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                    .Cakes
-                    .Single(e => e.CakeId == cakeId && e.UserId == _userId);
-                ctx.Cakes.Remove(entity);
+        //public bool DeleteCake(int cakeId)
+        //{
+            
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+                
+        //        var entity =
+        //            ctx
+        //            .Cakes
+        //            .Single(e => e.CakeId == cakeId && e.UserId == _userId);
+                
+        //        ctx.Cakes.Remove(entity);
 
-                return ctx.SaveChanges() == 1;
-            }
-        }
+        //        return ctx.SaveChanges() == 1;
+        //    }
+        //}
 
     }
 }

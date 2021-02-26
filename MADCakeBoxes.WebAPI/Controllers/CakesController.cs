@@ -50,13 +50,13 @@ namespace MADCakeBoxes.WebAPI.Controllers
             return Ok();
 
         }
-        public IHttpActionResult DeleteCake(int id)
-        {
-            var service = CreateCakeService();
-            if (!service.DeleteCake(id))
-                return InternalServerError();
-            return Ok();
-        }
+        //public IHttpActionResult DeleteCake(int id)
+        //{
+        //    var service = CreateCakeService();
+        //    if (!service.DeleteCake(id))
+        //        return InternalServerError();
+        //    return Ok();
+        //}
        // [Route("api/Cakes/{id}")]
         public IHttpActionResult GetById(int id)
         {

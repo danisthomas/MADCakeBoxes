@@ -42,7 +42,7 @@ namespace MADCakeBoxes.Models
         public double CakeCost { get { return 30.00; } }
 
         //GiftBox
-        public int GiftBoxId { get; set; }
+        public int? GiftBoxId { get; set; }
         public string Occasion { get; set; }
         public bool? Roses { get; set; }
         public bool? Pictures { get; set; }
