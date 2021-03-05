@@ -37,11 +37,15 @@ namespace MADCakeBoxes.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Carts.Single(e => e.CartId == model.CartId && e.CartUser == _cartId);
-                entity.ItemCount = model.ItemCount;
-                entity.CartId = model.CartId;
-                entity.CustomerId = model.CustomerId;
-                entity.GiftBoxId = model.GiftBoxId;
 
+                if (model.ItemCount != null)
+                {
+                    entity.ItemCount = model.ItemCount; 
+                }
+                if (model.GiftBoxId !=null)
+                {
+                    entity.GiftBoxId = model.GiftBoxId; 
+                }
                 return ctx.SaveChanges() == 1;
             }
         }

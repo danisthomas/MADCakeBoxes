@@ -80,7 +80,6 @@ namespace MADCakeBoxes.Services
                 if (model.Occasion != null)
                 {
                     entity.Occasion = model.Occasion;
-
                 }
                 if(model.Roses != null)
                 {
