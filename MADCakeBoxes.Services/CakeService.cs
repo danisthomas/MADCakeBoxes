@@ -50,6 +50,7 @@ namespace MADCakeBoxes.Services
                             CakeId = e.CakeId,
                             Flavor = e.Flavor,
                             Toppings = e.Toppings
+                            
                         }
                      );
                 return query.ToArray();
@@ -71,6 +72,7 @@ namespace MADCakeBoxes.Services
                         CakeId = entity.CakeId,
                         Flavor = entity.Flavor,
                         Toppings = entity.Toppings,
+                        Icing = entity.Icing,
                         
                     };
             }
@@ -83,10 +85,17 @@ namespace MADCakeBoxes.Services
                    ctx
                    .Cakes
                    .Single(e => e.CakeId == model.CakeId && e.UserId == _userId);
+                if(model.Flavor !=null)
+                 {entity.Flavor = model.Flavor; }
 
-                entity.Flavor = model.Flavor;
-                entity.Icing = model.Icing;
-                entity.Toppings = model.Toppings;
+                if (model.Icing != null)
+                {
+                    entity.Icing = model.Icing; 
+                }
+                if (model.Toppings != null)
+                {
+                    entity.Toppings = model.Toppings; 
+                }
                
 
                 return ctx.SaveChanges() == 1;

@@ -36,10 +36,14 @@ namespace MADCakeBoxes.Services
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Customers.Single(e => e.CustomerId == model.CustomerId && e.User == _userId);
-                entity.FirstName = model.FirstName;
-                entity.LastName = model.LastName;
-                entity.Address = model.Address;
-                entity.Phone = model.Phone;
+                if (model.FirstName != null)
+                {entity.FirstName = model.FirstName;};
+                if(model.LastName != null)
+                { entity.LastName = model.LastName; };
+                if(model.Address != null) 
+                { entity.Address = model.Address; };
+                if (model.Phone != null)
+                { entity.Phone = model.Phone;};
 
                 return ctx.SaveChanges() == 1;
             }
