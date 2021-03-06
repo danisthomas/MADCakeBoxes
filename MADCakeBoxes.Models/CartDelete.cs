@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using MADCakeBoxes.Data;
 
-namespace MADCakeBoxes.Data
+namespace MADCakeBoxes.Models
 {
-    public class Cart
+    public class CartDelete
     {
         private Cake _Cake = new Cake();
         private GiftBox _GiftBox = new GiftBox();
@@ -39,9 +40,5 @@ namespace MADCakeBoxes.Data
 
         [Required]
         public Guid CartUser { get; set; }
-        //Cake ingredients
-       // public int CakeId { get; set; }
-        
-        
     }
 }
